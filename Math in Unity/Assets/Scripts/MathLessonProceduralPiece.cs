@@ -38,17 +38,4 @@ public class MathLessonProceduralPiece : MonoBehaviour
         mesh.SetTriangles(triangles, 0);
         mesh.SetNormals(normals);
     }
-    public Vector3 point;
-    private void OnDrawGizmos() {
-        List<Vector3> vertices = new List<Vector3>()
-        {
-            new Vector3(-1, 0, -1),//0
-            new Vector3(-1.5f, 0, 0.5f),//1
-            new Vector3(0, 0, 1.5f),//2
-            new Vector3(+1.5f, 0, 0.5f),//3
-            new Vector3(+1, 0, -1),
-            point//4
-        };
-        Handles.DrawAAPolyLine(vertices.ToArray());
-    }
 }
