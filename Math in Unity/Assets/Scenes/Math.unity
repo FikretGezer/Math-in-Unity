@@ -2655,8 +2655,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ee04e85c041534bb28f738da90ccf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  addAmount: 0.01
+  firstWay: 0
+  radius: 0.83
+  addAmount: 0.0059
+  turn: 6
   detail: 64
+  turnCount: 10
+  radiusSecond: 1.25
+  detail2: 256
+  height: 3
 --- !u!4 &1813008419
 Transform:
   m_ObjectHideFlags: 0
