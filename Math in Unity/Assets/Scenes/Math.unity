@@ -2656,6 +2656,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstWay: 0
+  enableTimer: 0
+  torusEnabler: 1
   _curve:
     serializedVersion: 2
     m_Curve: []
@@ -2692,15 +2694,18 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 4
     m_NumAlphaKeys: 2
-  radius: 0.83
-  addAmount: 0.0059
+  clr: {r: 1, g: 1, b: 1, a: 1}
+  radius: 0.88
+  addAmount: 0.0043
   turn: 6
   detail: 64
-  turnCount: 0
-  radiusSecond: 1.35
+  turnCount: 10
+  radiusSecond: 1.08
   detail2: 256
   height: 4
-  lerpSpeed: 1
+  lerpSpeed: 0.1
+  minorRadius: 1.07
+  majorRadius: 5.08
 --- !u!4 &1813008419
 Transform:
   m_ObjectHideFlags: 0
@@ -2709,13 +2714,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813008417}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1831951414
 GameObject:
   m_ObjectHideFlags: 0
