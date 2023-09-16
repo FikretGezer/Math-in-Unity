@@ -8,3 +8,9 @@ Unity Version: 2022.3.5f1
 
 ## Spring with Mathematics
 ![Spring_010](https://github.com/FikretGezer/Math-in-Unity/assets/64322071/caffca1e-47ab-4e9a-8bb3-bf2fa2b44776)
+
+## Spring Around Torus
+![SpringAroundTorus_002](https://github.com/FikretGezer/Math-in-Unity/assets/64322071/197ae521-2c8a-4944-acec-b5d250066251)
+
+## Bezier Mesh
+![BezierMesh_001](https://github.com/FikretGezer/Math-in-Unity/assets/64322071/e115de7e-77d2-4fbf-9567-c506a80192be)
