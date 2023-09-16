@@ -13,10 +13,27 @@ public class BezierMesh : MonoBehaviour
     public int segmentCount;
     public int VertexCount => 2 * (segmentCount + 1);
 
+    public float moveSpeed = 5f;
     private void OnValidate() {
         segmentCount = Mathf.Max(1, segmentCount);
     }
+    private void Update() {
+        var p_1 = transform.GetChild(1).position;
+        var p_2 = transform.GetChild(2).position;
 
+        if(Input.GetKey(KeyCode.W))
+            p_1.y += moveSpeed * Time.deltaTime;
+        if(Input.GetKey(KeyCode.S))
+            p_1.y -= moveSpeed * Time.deltaTime;
+
+        if(Input.GetKey(KeyCode.UpArrow))
+            p_2.y += moveSpeed * Time.deltaTime;
+        if(Input.GetKey(KeyCode.DownArrow))
+            p_2.y -= moveSpeed * Time.deltaTime;
+
+        transform.GetChild(1).position = p_1;
+        transform.GetChild(2).position = p_2;
+    }
     void OnDrawGizmos()
     {
         if(mesh == null)
