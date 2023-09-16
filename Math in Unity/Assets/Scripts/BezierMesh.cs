@@ -28,21 +28,21 @@ public class BezierMesh : MonoBehaviour
 
         Gizmos.matrix = transform.localToWorldMatrix;
 
-        List<Vector3> vertices = new List<Vector3>();
+        List<Vector3> verts = new List<Vector3>();
         List<Vector3> normals = new List<Vector3>();
-        List<int> triangles = new List<int>();
 
         for (int i = 0; i < segmentCount + 1; i++)
         {
             float t = i / (float)segmentCount;
-            Matrix4x4 mtx = GetPoint(i);
-            vertices.Add(mtx.MultiplyPoint3x4(profilePtA));
-            vertices.Add(mtx.MultiplyPoint3x4(profilePtB));
+            Matrix4x4 mtx = GetPoint(t);
+            verts.Add(mtx.MultiplyPoint3x4(profilePtA));
+            verts.Add(mtx.MultiplyPoint3x4(profilePtB));
             Vector3 normal = mtx.GetColumn(1);
             normals.Add(normal);
             normals.Add(normal);
         }
 
+        List<int> triangles = new List<int>();
         for (int s = 0; s < segmentCount; s++)
         {
             int root = s * 2;
@@ -60,7 +60,7 @@ public class BezierMesh : MonoBehaviour
         }
 
         mesh.Clear();
-        mesh.SetVertices(vertices);
+        mesh.SetVertices(verts);
         mesh.SetNormals(normals);
         mesh.SetTriangles(triangles, 0);
     }   
