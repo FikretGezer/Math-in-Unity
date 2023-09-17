@@ -14,6 +14,12 @@ public class BezierMesh : MonoBehaviour
     public int VertexCount => 2 * (segmentCount + 1);
 
     public float moveSpeed = 5f;
+    
+    Vector3 p0 => transform.GetChild(0).localPosition;
+    Vector3 p1 => transform.GetChild(1).localPosition;
+    Vector3 p2 => transform.GetChild(2).localPosition;
+    Vector3 p3 => transform.GetChild(3).localPosition;
+
     private void OnValidate() {
         segmentCount = Mathf.Max(1, segmentCount);
     }
@@ -51,9 +57,11 @@ public class BezierMesh : MonoBehaviour
         for (int i = 0; i < segmentCount + 1; i++)
         {
             float t = i / (float)segmentCount;
+            
             Matrix4x4 mtx = GetPoint(t);
             verts.Add(mtx.MultiplyPoint3x4(profilePtA));
             verts.Add(mtx.MultiplyPoint3x4(profilePtB));
+
             Vector3 normal = mtx.GetColumn(1);
             normals.Add(normal);
             normals.Add(normal);
@@ -82,10 +90,6 @@ public class BezierMesh : MonoBehaviour
         mesh.SetTriangles(triangles, 0);
     }   
 
-    Vector3 p0 => transform.GetChild(0).localPosition;
-    Vector3 p1 => transform.GetChild(1).localPosition;
-    Vector3 p2 => transform.GetChild(2).localPosition;
-    Vector3 p3 => transform.GetChild(3).localPosition;
 
     Matrix4x4 GetPoint(float t)
     {
